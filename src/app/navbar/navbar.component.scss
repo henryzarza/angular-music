@@ -1,0 +1,24 @@
+.nav-fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin-bottom: 0px;
+    z-index: 997;
+    & #logo-container {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        padding-top: .8rem;
+        img {
+            height: auto;
+            &:first-child {
+                width: 2.5rem;
+                margin-right: .5rem;
+            }
+            &:nth-child(2) {
+                width: 3.3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<div class="row">
+
+  <h3 class="col s12 grey-text text-darken-1">Chart Top Tracks</h3>
+
+  <div class="col s12 m6 xl4" *ngFor="let track of data">
+    <div class="card sticky-action">
+
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" [src]="track.image[3]['#text']" [alt]="track.name">
+      </div>
+
+      <div class="card-content card-action">
+        <span class="card-title activator grey-text text-darken-4">{{track.name}}<i class="material-icons right">more_vert</i></span>
+      </div>
+
+      <div class="card-reveal">
+        <span class="card-title teal-text text-darken-4">{{track.artist.name}}<i class="material-icons right">close</i></span>
+        <div class="divider"></div>
+        <p>
+          This track have <strong class="red-text">{{track.playcount}}</strong> playcount in this platform. <br>
+          This track has been played by <strong class="red-text">{{track.listeners}}</strong> people.
+        </p>
+        <a class="btn blue darken-2 waves-effect" (click)="openModal(track)">More info</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Information Track -->
+<div id="modal-information-track" class="modal modal-fixed-footer">
+  
+  <div class="modal-content" *ngIf="trackInfo">
+    <h4>{{trackInfo.info}}</h4>
+    <div class="row">
+      <h4 class="col s12">
+        <a class="blue-text text-darken-4" [href]="trackInfo.artist.url" target="_blank">{{trackInfo.artist.name}}</a>
+      </h4>
+      <div class="col s12">
+        <strong class="red-text">Duration:</strong> {{trackInfo.duration}} <br>
+        <strong class="red-text">Playcount:</strong> {{trackInfo.playcount}} <br>
+        <strong class="red-text">Listeners:</strong> {{trackInfo.listeners}} <br>
+        <strong class="red-text">Published:</strong> {{trackInfo.wiki?.published}}
+      </div>
+      <div class="col s12">
+        <strong class="red-text">Summary</strong> <br>
+        {{trackInfo.wiki?.summary}}
+        <a class="btn bt-large blue darken-2 waves-effect" [href]="trackInfo.url" target="_blank">
+          Go to url <i class="material-icons right">launch</i>
+        </a>
+      </div>
+
+      <div class="col s12 my-1 divider"></div>
+
+      <h5 class="col s12 blue-text text-darken-4">Tags of song</h5>
+      <div class="col s12">
+        <a class="btn chip blue accent-3 white-text" [href]="tag.url" target="_blank" *ngFor="let tag of trackInfo.toptags?.tag">
+          {{tag.name}}
+        </a>
+      </div>
+      
+      <div class="col s12 my-1 divider"></div>
+
+      <h5 class="col s12 blue-text text-darken-4">Info of Song</h5>
+      <div class="col s12">
+        {{trackInfo.wiki?.content}}
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+  </div>
+</div>
+
+<settings-configuration></settings-configuration>

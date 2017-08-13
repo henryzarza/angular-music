@@ -1,0 +1,27 @@
+<nav class="nav-fixed teal darken-4">
+    <div class="nav-wrapper container">
+        <a class="button-collapse" data-activates="slide-out" id="button-collapse"><i class="material-icons">menu</i></a>
+        <a routerLink="" id="logo-container" class="brand-logo">
+            <img class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Angular" src="assets/angular-logo.svg" alt="Angular">
+            <img class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Materialize" src="assets/materialize-logo.svg" alt="Materialize">
+        </a>
+
+        <!-- Horizontal Navbar links only shown on large resolutions -->
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="waves-effect waves-light" routerLink="track" routerLinkActive="active"><a><i class="material-icons left">queue_music</i> Tracks</a></li>
+            <li class="waves-effect waves-light" routerLink="artist" routerLinkActive="active"><a><i class="material-icons left">stars</i> Artists</a></li>
+            <li class="waves-effect waves-light" routerLink="album" routerLinkActive="active"><a><i class="material-icons left">album</i> Albums</a></li>
+            <li class="waves-effect waves-light" routerLink="gender" routerLinkActive="active"><a><i class="material-icons left">audiotrack</i> Genders</a></li>
+            <li class="waves-effect waves-light" routerLink="explore" routerLinkActive="active"><a><i class="material-icons left">explore</i> Explore</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Sidebar navigation -->
+<ul id="slide-out" class="side-nav teal lighten-5">
+    <li routerLink="track" routerLinkActive="active"><a><i class="material-icons left">queue_music</i> Tracks</a></li>
+    <li routerLink="artist" routerLinkActive="active"><a><i class="material-icons left">stars</i> Artists</a></li>
+    <li routerLink="album" routerLinkActive="active"><a><i class="material-icons left">album</i> Albums</a></li>
+    <li routerLink="gender" routerLinkActive="active"><a><i class="material-icons left">audiotrack</i> Genders</a></li>
+    <li routerLink="explore" routerLinkActive="active"><a><i class="material-icons left">explore</i> Explore</a></li>
+</ul>

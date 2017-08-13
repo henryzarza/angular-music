@@ -1,0 +1,15 @@
+<!-- Element Showed -->
+<div class="fixed-action-btn">  
+    <a id="menu" class="waves-effect waves-light btn-floating btn-large teal darken-2" (click)="openTap()"><i class="material-icons">settings</i></a>
+</div>
+
+<!-- Tap Target Structure -->
+<div class="tap-target teal light-3" data-activates="menu" (click)="$event.stopPropagation()">
+    <div class="tap-target-content">
+        <h5 class="white-text">Settings</h5>
+        <div class="input-field">
+            <input id="perpage" type="text" class="validate white-text">
+            <label for="perpage" class="white-text">Number register per page</label>
+        </div>
+    </div>
+</div>

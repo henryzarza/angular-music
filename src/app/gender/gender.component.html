@@ -1,0 +1,15 @@
+<div class="row">
+
+  <h3 class="col s12 grey-text text-darken-1">Chart Top Genders</h3>
+
+  <div class="col s6 m4 xl3 svg__container" *ngFor="let tag of data">
+    
+    <svg class="container__shape" width="100%" height="100%" viewBox="0 0 400 300">
+      <path d="M 94.9,90.2 101,30.7 163,72.3 229,17.7 263,68.2 319,55.9 315,102 375,144 316,175 340,228 265,220 251,263 180,233 143,282 98.9,218 57.5,236 82,189 25,170 82.8,141 48.7,93.7 Z"></path>
+    </svg>
+    <div class="svg__content">{{tag.name}}</div>
+
+  </div>
+</div>
+
+<settings-configuration></settings-configuration>

@@ -1,0 +1,19 @@
+@import "../../../node_modules/materialize-css/sass/components/color";
+
+.img-artist {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    &:hover {
+        cursor: pointer;
+        filter: blur(.1rem);
+        -webkit-filter: blur(.1rem);
+        & + .teal-text {
+            color: color("light-blue", "darken-3") !important;
+        }
+    }
+}
+
+.border-radius-1 {
+    border-radius: 1rem;
+}

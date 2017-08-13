@@ -1,0 +1,26 @@
+<div class="row">
+
+  <h3 class="col s12 grey-text text-darken-1">Chart Top Artist</h3>
+
+  <div class="col s12 m6 xl4" *ngFor="let artist of data">
+    <img class="responsive-img img-artist transition" [src]="artist.image[3]['#text']" alt="Photo of {{artist.name}}"
+      (click)="openModal(artist.mbid)">
+    <h4 class="teal-text text-darken-2 center-align transition">{{artist.name}}</h4>
+    <p class="grey-text text-darken-1 center-align">{{artist.listeners}} <span class="fs-mini fw-bold">listeners</span></p>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div id="modal-information-artist" class="border-radius-1 modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-red btn-flat ">Close</a>
+  </div>
+</div>
+
+
+<settings-configuration></settings-configuration>

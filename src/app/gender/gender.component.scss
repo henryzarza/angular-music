@@ -1,0 +1,16 @@
+.svg__container {
+    position: relative;
+    margin-bottom: 1rem;
+    .container__shape {
+        width: 100%;
+        height: 100%;
+    }
+    .svg__content {
+        color: #797979;
+        width: 50%;
+        position: absolute;
+        top: 40%;
+        left: 24%;
+        text-align: center;
+    }
+}
