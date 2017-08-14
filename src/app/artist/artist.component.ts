@@ -13,17 +13,22 @@ export class ArtistComponent implements OnInit {
 
   private data: Array<Object>;
   private artistInfo;
+  private artistAlbum;
 
   constructor(private artistService: ArtistService) { }
 
   ngOnInit() {
     this.artistService.getTopArtist().then(dataIn => this.data = dataIn);
     jQuery('#modal-information-artist').modal();
+    jQuery('.carousel').carousel();
   }
 
   private openModal(mbid: string) {
     jQuery('#modal-information-artist').modal('open');
-    this.artistService.doRequest(mbid, 'getinfo').then(dataIn => {this.artistInfo = dataIn; console.log(this.artistInfo)});
+    this.artistService.doRequest(mbid, 'getinfo').then(dataIn => {this.artistInfo = dataIn['artist']; console.log(this.artistInfo)});
+    this.artistService.doRequest(mbid, 'gettopalbums').then(dataIn => {this.artistAlbum = dataIn['topalbums']['album']; console.log(this.artistAlbum)});
   }
+
+
 
 }
